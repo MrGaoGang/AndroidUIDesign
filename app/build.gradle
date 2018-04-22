@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        sin {
+            keyAlias 'sin'
+            keyPassword '123456'
+            storeFile file('/Users/mr.gao/Documents/Github/AndroidUIDesign/app/build/keystore/key2')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "26.0.2"
     defaultConfig {
@@ -9,7 +17,9 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+//       测试的时候使用的额
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "umeng"]//添加一个默认渠道号
     }
     buildTypes {
         release {
@@ -17,10 +27,30 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    android {
+        flavorDimensions "default"
+        productFlavors {
+            kuan { dimension "default" }
+            xiaomi { dimension "default" }
+            qh360 { dimension "default" }
+            baidu { dimension "default" }
+            wandoujia { dimension "default" }
+        }
+
+        productFlavors.all {
+            flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+    }
+
+    android {
+        packagingOptions {
+            exclude 'LICENSE.txt'
+        }
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -29,10 +59,24 @@ dependencies {
     compile 'com.android.support:design:25.0.0'
     compile 'com.android.support:palette-v7:25.0.0'
 
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-
-
+    compile 'com.umeng.analytics:analytics:latest.integration'
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    /*单元测试使用的*/
+    testCompile 'junit:junit:4.12'
+    /*测试使用android sdk
+    * 通过使用Robolectrie，你可以编写测试类，这些类可以使用Android SDK和资源文件，
+    * 当然其还是跑在jvm上，这会让你测试app更加迅速。*/
+//    testCompile 'org.robolectric:robolectric:3.0'
+//    testCompile 'org.robolectric:shadows-support:3.0'
+
+    /*功能测试使用的
+    * 其是用来测试一个app的多个模块是否能够正常工作。举个栗子，你可以创建一个功能测试来确保你点击某一按钮后是否会有一个新的activity。
+    * 依然，我们会有很多框架。但是在这里，我推荐Espresso。*/
+//    androidTestCompile 'com.android.support.test:runner:0.3'
+//    androidTestCompile 'com.android.support.test:rules:0.3'
+//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
+//    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2'
 }

@@ -52,5 +52,12 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_height="match_parent">
 
+        <!--我们需要定义AppBarLayout与滚动视图之间的联系。
+        在RecyclerView或者任意支持嵌套滚动的view比如NestedScrollView上添加app:layout_behavior。
+        support library包含了一个特殊的字符串资源@string/appbar_scrolling_view_behavior，
+        它的值为android.support.design.widget.AppBarLayout$ScrollingViewBehavior ，
+        指向AppBarLayout.ScrollingViewBehavior，用来通知AppBarLayout
+        这个特殊的view何时发生了滚动事件，这个behavior需要设置在触发滚动事件的view之上。-->
+
     </android.support.v7.widget.RecyclerView>
 </android.support.design.widget.CoordinatorLayout>
