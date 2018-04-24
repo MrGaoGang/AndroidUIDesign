@@ -27,26 +27,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    android {
-        flavorDimensions "default"
-        productFlavors {
-            kuan { dimension "default" }
-            xiaomi { dimension "default" }
-            qh360 { dimension "default" }
-            baidu { dimension "default" }
-            wandoujia { dimension "default" }
-        }
-
-        productFlavors.all {
-            flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
-        }
-    }
-
-    android {
-        packagingOptions {
-            exclude 'LICENSE.txt'
-        }
-    }
+//    android {
+//        flavorDimensions "default"
+//        productFlavors {
+//            kuan { dimension "default" }
+//            xiaomi { dimension "default" }
+//            qh360 { dimension "default" }
+//            baidu { dimension "default" }
+//            wandoujia { dimension "default" }
+//        }
+//
+//        productFlavors.all {
+//            flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+//        }
+//    }
+//
+//    android {
+//        packagingOptions {
+//            exclude 'LICENSE.txt'
+//        }
+//    }
 }
 
 dependencies {
