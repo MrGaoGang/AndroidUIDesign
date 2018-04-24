@@ -2,8 +2,6 @@ package com.mrgao.androiduidesign.tab;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
@@ -46,23 +44,7 @@ public class TabDemoActivity extends AppCompatActivity {
             titleList.add("第" + (i + 1) + "个");
         }
 
-        viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
-            @Override
-            public Fragment getItem(int position) {
-                return fragments.get(position);
-            }
-
-            @Override
-            public int getCount() {
-                return fragments.size();
-            }
-
-
-            @Override
-            public CharSequence getPageTitle(int position) {
-                return titleList.get(position);
-            }
-        });
+        viewPager.setAdapter(new SingleFragmentPagerAdapter(getSupportFragmentManager(),fragments,titleList));
 
         viewPager.setCurrentItem(0);
 

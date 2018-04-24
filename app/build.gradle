@@ -64,6 +64,8 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
+    compile 'com.ashokvarma.android:bottom-navigation-bar:1.2.0'
+
     /*单元测试使用的*/
     testCompile 'junit:junit:4.12'
     /*测试使用android sdk

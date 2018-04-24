@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".tab.TabDemoActivity">
+        <activity android:name=".tab.NavigationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -39,7 +39,9 @@
             android:name="UMENG_CHANNEL"
             android:value="${UMENG_CHANNEL_VALUE}"/>
 
-        <!--<activity android:name=".tab.TabDemoActivity">-->
+         <activity android:name=".tab.TabDemoActivity">
+         </activity>
+        <!--<activity android:name=".tab.NavigationActivity">-->
         <!--</activity>-->
     </application>
 
