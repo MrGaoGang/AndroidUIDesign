@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mrgao.androiduidesign.animation.AnimationActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/scaleBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缩放"/>
+
+        <Button
+            android:id="@+id/transalteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="移动"/>
+
+        <Button
+            android:id="@+id/rotateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="旋转"/>
+
+        <Button
+            android:id="@+id/alphaBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="透明度"/>
+
+        <Button
+            android:id="@+id/animationSetBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="综合"/>
+
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:src="@drawable/slt3"
+        android:id="@+id/image"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
