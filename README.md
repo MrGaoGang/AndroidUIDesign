@@ -231,3 +231,32 @@
 
 ### 6. 使用recyclerview上划悬停部分组件效果。（与5 类似。）
 
+```Java
+
+        /**
+         * 实现的思路简单是：
+         * recyclerview中添加一个headerview，此headerview和悬浮的是一样，当向上滑动的时候，判断第一个可见的位置，
+         * 如果第一个可见的位置为数据位置，那么此时headerview已经在屏幕之外，则显示与recyclerview同级的且和headerview的view。
+         * 监听recyclerview的滑动，
+         */
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                int firstPosition = mLayoutManager.findFirstVisibleItemPosition();
+                if (firstPosition >= 2) {
+                    mFakeTabView.setVisibility(View.VISIBLE);
+                } else {
+                    mFakeTabView.setVisibility(View.GONE);
+                }
+                int tabIndex = (firstPosition - 2);
+                mTvTabName.setText("Tab " + tabIndex);
+                super.onScrolled(recyclerView, dx, dy);
+            }
+        });
+
+```
