@@ -1,19 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.mrgao.androiduidesign.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/payBtn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:text="模仿支付宝主界面"/>
 
-</android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/reStickHeaderBtn"
+        android:layout_width="match_parent"
+        android:textAllCaps="false"
+        android:layout_height="wrap_content"
+        android:text="recyclerview悬浮头部"/>
+
+
+    <Button
+        android:id="@+id/reChangeHeaderBtn"
+        android:layout_width="match_parent"
+        android:textAllCaps="false"
+
+        android:layout_height="wrap_content"
+        android:text="recyclerview上划变化头部"/>
+
+
+    
+    <Button
+        android:id="@+id/tabUseBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TabLayout的使用"
+        android:textAllCaps="false"/>
+
+
+    <Button
+        android:id="@+id/animationBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一些动画"/>
+
+    <Button
+        android:id="@+id/naviBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="navigation使用"/>
+
+</LinearLayout>
