@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.mrgao.androiduidesign.animation.AnimationActivity;
+import com.mrgao.androiduidesign.floatview.FloatActivity;
 import com.mrgao.androiduidesign.pay.PaymentActivity;
 import com.mrgao.androiduidesign.recyclerview.RecyclerChangeHeaderActivity;
 import com.mrgao.androiduidesign.recyclerview.RecyclerStickHeaderActivity;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.payBtn, R.id.reStickHeaderBtn, R.id.reChangeHeaderBtn, R.id.tabUseBtn, R.id.animationBtn, R.id.naviBtn})
+    @OnClick({R.id.payBtn, R.id.reStickHeaderBtn, R.id.reChangeHeaderBtn, R.id.tabUseBtn, R.id.animationBtn, R.id.naviBtn,R.id.floatBtn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.payBtn:
@@ -63,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.naviBtn:
                 startActivity(new Intent(MainActivity.this, NavigationActivity.class));
+
+                break;
+
+            case R.id.floatBtn:
+                startActivity(new Intent(MainActivity.this, FloatActivity.class));
 
                 break;
         }
